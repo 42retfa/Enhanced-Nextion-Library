@@ -33,14 +33,22 @@
  * 
  * @warning Please do not call @ref NexTouch::attachPush on this component, even though you can. 
  */
-class NexVariable: public NexTouch
+class NexVariable : public NexTouch
 {
 public: /* methods */
-
     /**
      * @copydoc NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
      */
-    NexVariable(uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
+
+    NexVariable(uint8_t pid, uint8_t cid, const char *name, const NexObject *page = nullptr);
+
+    /*
+    * 
+    * Empty parameters initialization 
+    * for runtime configuration
+    * 
+    */
+    NexVariable():NexTouch(0, 0, "") {}
 
     /*
     * Get text attribute of component. 
@@ -62,7 +70,7 @@ public: /* methods */
      * @retval true - success. 
      * @retval false - failed.
      */
-    bool getText(char *buffer, uint16_t &len);   
+    bool getText(char *buffer, uint16_t &len);
 
     /**
      * Set text attribute of component.
@@ -70,8 +78,8 @@ public: /* methods */
      * @param buffer - text buffer terminated with '\0'. 
      * @return true if success, false for failure. 
      */
-    bool setText(const char *buffer);    
-	
+    bool setText(const char *buffer);
+
     /**
      * Get val attribute of component
      *
@@ -79,7 +87,7 @@ public: /* methods */
      * @return the length of the data 
      */
     uint32_t getValue(int32_t *number);
-	
+
     /**
      * Set val attribute of component
      *
@@ -91,6 +99,5 @@ public: /* methods */
 /**
  * @}
  */
-
 
 #endif /* #ifndef __NEXVARRIABLE_H__*/

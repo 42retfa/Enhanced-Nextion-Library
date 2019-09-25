@@ -32,13 +32,13 @@
  * Define DEBUG_SERIAL_ENABLE to enable debug serial. 
  * Comment it to disable debug serial. 
  */
-//#define DEBUG_SERIAL_ENABLE
+#define DEBUG_SERIAL_ENABLE
 
 /**
  * Define dbSerial for the output of debug messages. 
  * it is resonsibility of main program to initialize debug serial port (begin(...)
  */
-//#define dbSerial Serial
+#define dbSerial Serial
 
 /**
  * Define nexSerial for communicate with Nextion touch panel. 
@@ -49,13 +49,14 @@
 //#define NEX_SOFTWARE_SERIAL
 #ifndef NEX_SOFTWARE_SERIAL
 // hardware Serial port
-#define nexSerial Serial
+#define nexSerial Serial2
 #else
 // NodeMcu / Esp8266 Softwareserial if usb port used for debug 
 // NodeMcu board pin numbers not match with Esp8266 pin numbers use NodeMcu Pin number definitions (pins_arduino.h)
 #define NEX_RX D2
 #define NEX_TX D1
 #endif
+
 
 
 #ifdef DEBUG_SERIAL_ENABLE

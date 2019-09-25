@@ -36,6 +36,14 @@ public: /* methods */
      */
     NexText(uint8_t pid, uint8_t cid, const char *name, const NexObject* page=nullptr);
     
+ /*
+    * 
+    * Empty parameters initialization 
+    * for runtime configuration
+    * 
+    */
+    NexText():NexTouch(0, 0, "") {}
+
 
     /*
     * Get text attribute of component. 

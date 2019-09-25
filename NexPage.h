@@ -37,6 +37,14 @@ public: /* methods */
      */
     NexPage(uint8_t pid, uint8_t cid, const char *name);
     
+   /**
+    * 
+    * Empty parameters initialization 
+    * for runtime configuration
+    * 
+    */
+    NexPage():NexTouch(0, 0, "") {}
+
     /**
      * Show itself. 
      * 

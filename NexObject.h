@@ -43,6 +43,13 @@ public: /* methods */
      */
     NexObject(uint8_t pid, uint8_t cid, const char* name, const NexObject* page) ;
 
+   /**
+    * 
+    * RunTime configuration of the object 
+    * 
+    */
+   void configure(uint8_t pid, uint8_t cid, const char *name, const NexObject* page = nullptr);
+
     /**
      * Get object width
      * 
@@ -104,8 +111,8 @@ protected: /* methods */
     void getObjGlobalPageName(String &gName);
 
 private: /* data */ 
-    const uint8_t __pid; /* Page ID */
-    const uint8_t __cid; /* Component ID */
+    uint8_t __pid; /* Page ID */
+    uint8_t __cid; /* Component ID */
     const char* __name; /* An unique name */
     const NexObject* __page; /* page information for global objects nullptr for local */
 };

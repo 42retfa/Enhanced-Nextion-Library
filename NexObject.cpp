@@ -22,6 +22,14 @@ __pid{pid},__cid{cid},__name{name}, __page{page}
 {
 }
 
+void NexObject::configure(uint8_t pid, uint8_t cid, const char *name, const NexObject* page)
+{
+    this->__pid = pid;
+    this->__cid = cid;
+    this->__name = name;
+    this->__page = page;
+}
+
 uint8_t NexObject::getObjPid(void)
 {
     return __pid;
